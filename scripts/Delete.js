@@ -1,1 +1,0 @@
-// DELETE THIS FILE ONCE WE HAVE ANY FILE IN scripts folder
