@@ -14,24 +14,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDhSofrE-tzn4O3wvQO0anASOueMiiEjag",
-      authDomain: "trailz-af0c9.firebaseapp.com",
-      databaseURL: "https://trailz-af0c9.firebaseio.com",
-      projectId: "trailz-af0c9",
-      storageBucket: "",
-      messagingSenderId: "664147021433"
-    };
-    firebase.initializeApp(config);
-    
-    var db = firebase.database();
-    var root = db.ref();
-    var users, hazards;
-    root.child('users').on('value', function(dbsnap) { users = dbsnap.val() });
-    root.child('hazards').on('value', function(dbsnap) { hazards = dbsnap.val() });
-  </script>
+  <script src="scripts/db.js"></script>
 
 </head>
 <body>
