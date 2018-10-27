@@ -1,5 +1,5 @@
 
-// Initializes map to current location
+// Initializes map to current location and returns reference to the map
 function myMap() {
 	var mapProp= {
 		// Default location for map is England is no location found
@@ -23,4 +23,6 @@ function myMap() {
 
 	// To add the marker to the map, call setMap();
 	marker.setMap(map);
+
+	return map;
 }
