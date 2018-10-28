@@ -19,6 +19,14 @@ function initMap() {
     	document.getElementById("report-form").setAttribute("class", "enabled");
 
     	// Add new marker to database
+    	var element = document.getElementById("submit");
+    	element.addEventListener("click", function() {
+    		var description = document.getElementById("descrip");
+    		var location = {lat: latitude, lon: longitude};
+    		var ddl = document.getElementById("category");
+    		var category = ddl.options[ddl.selectedIndex].value;
+    		addIncident(location, category, description);
+    	});
     });
 }
 	

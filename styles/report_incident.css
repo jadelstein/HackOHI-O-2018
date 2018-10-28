@@ -19,7 +19,7 @@
     box-sizing: border-box;
     resize: none;
 }
-input {
+input, select {
 	font-weight: normal;
 	font-size: 14pt;
 }
