@@ -39,12 +39,19 @@ function loadIncidents(map) {
   elts.orderByKey().on("child_added", function(snapshot) {
     var newMarker = new google.maps.Marker();
 	newMarker.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
-	newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
+	// Set color based on category
+	if (snapshot.val().category == "safety") {
+		newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
+	} else {
+		newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/purple-dot.png");
+	}
+	
 	newMarker.setClickable(true);
+	var infoWindow = new google.maps.InfoWindow();
 	google.maps.event.addListener(newMarker, "click", function() {
 			var label = {text:snapshot.val().description, fontSize: "0pt"};
 			newMarker.setLabel(label);
-			var infoWindow = new google.maps.InfoWindow();
+			infoWindow.close(map, newMarker);
 			infoWindow.setContent(snapshot.val().description);
 			infoWindow.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
 			infoWindow.open(map, newMarker);

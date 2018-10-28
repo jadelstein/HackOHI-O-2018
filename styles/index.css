@@ -35,3 +35,18 @@ body {
     background-color: #999da3;
     opacity:.9;
 }
+
+.ital {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.safety {
+    color: green;
+}
+.trail-closure {
+    color: purple;
+}
