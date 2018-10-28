@@ -35,13 +35,3 @@ function addIncident(loc, category, description, date, time) {
   root.child("users").child(11/* Firebase auth */).child("incidents").update( { [timestamp]: "" } );
 }
 
-function getIncidents() {
-  var elts = db.ref("hazards");
-  var incidents = [];
-  elts.orderByKey().on("child_added", function(snapshot) {
-    incidents.push(snapshot.val());
-    console.log(snapshot.val().loc);
-  });
-  console.log("Returning " + incidents);
-  return incidents;
-}

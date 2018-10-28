@@ -30,17 +30,17 @@ function myMap() {
 	marker.setMap(map);
 
 	// Load all incidents thus far
-	// TODO
-	var incidents = getIncidents();
-	console.log("A" + incidents);
-	for (var i in incidents) {
-		var newMarker = new google.maps.Marker();
-		newMarker.setPosition(new google.maps.LatLng(i.loc.lat, i.loc.lon));
-		newMarker.setMap(map);
-		console.log("HI");
-	}
-
-
+	loadIncidents(map);
 	return map;
+}
+
+function loadIncidents(map) {
+  var elts = db.ref("hazards");
+  elts.orderByKey().on("child_added", function(snapshot) {
+    var newMarker = new google.maps.Marker();
+	newMarker.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
+	newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
+	newMarker.setMap(map);
+  });
 }
 
