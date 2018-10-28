@@ -27,6 +27,12 @@ function initMap() {
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
+            //grabs the user id ...literally no idea why but it does
+            var uid = firebase.auth().O;
+            //incase somone reprts when they are not logged in we want to have something
+            if(uid === undefined){
+                uid = "guest"
+            }
     		addIncident(location, category, description, date, time);
     	});
     });
