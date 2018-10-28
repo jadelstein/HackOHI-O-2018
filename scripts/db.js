@@ -18,7 +18,7 @@ var users, hazards;
 root.child('users').on('value', function(dbsnap) { users = dbsnap.val() });
 root.child('hazards').on('value', function(dbsnap) { hazards = dbsnap.val() });
 
-function addIncident(loc, category, description) {
+function addIncident(loc, category, description, date, time) {
   var timestamp = Date.now();
   var addition = { [timestamp]: {
     category: category,
@@ -27,6 +27,8 @@ function addIncident(loc, category, description) {
       lat: loc.lat,
       lon: loc.lon
     },
+    date: date,
+    time: time,
     user: 11 // needs to get stuff from Firebase auth
   }};
   root.child("hazards").update(addition);

@@ -18,14 +18,16 @@ function initMap() {
     	document.getElementById("prompt-location").remove();
     	document.getElementById("report-form").setAttribute("class", "enabled");
 
-    	// Add new marker to database
+    	// Add new marker to database on submit
     	var element = document.getElementById("submit");
     	element.addEventListener("click", function() {
     		var description = document.getElementById("descrip").value;
+    		var date = document.getElementById("date").value;
+    		var time = document.getElementById("time").value;
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
-    		addIncident(location, category, description);
+    		addIncident(location, category, description, date, time);
     	});
     });
 }
