@@ -32,10 +32,11 @@ function initMap() {
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
             //grabs the user id i think this is a better way of doing this lol
-            var uname = firebase.auth().currentUser.displayName;
+            var user  = firebase.auth().currentUser;
+            var uname = "guest";
             //incase somone reprts when they are not logged in we want to have something
-            if(uname == null){
-                uname = "guest"
+            if(user != null){
+                uname = user.displayName
             }
     		addIncident(location, category, description, date, time, uname);
     	});
