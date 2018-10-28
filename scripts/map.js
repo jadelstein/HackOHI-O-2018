@@ -42,8 +42,10 @@ function loadIncidents(map) {
 	// Set color based on category
 	if (snapshot.val().category == "safety") {
 		newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
-	} else {
+	} else if (snapshot.val().category == "trail-closure") {
 		newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/purple-dot.png");
+	} else {
+		newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");
 	}
 	
 	newMarker.setClickable(true);
