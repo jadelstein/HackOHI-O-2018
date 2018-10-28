@@ -7,26 +7,33 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
 }
 .center-img{
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 20%;
+    width: 100%;
 }
 .centerButton {
 	text-align: center;
     display: inline;
     margin-left: auto;
     margin-right: auto;
-    width: 20%;
+    background-color: #27292d
 }
 .button1 {
 	text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width:100%;
+}
+.info-bg{
+    padding:10%;
+    background-image: url('../images/trail.JPG');
+    background-size: cover;
+}
+.info-box{
+    margin:10%;
+    background-color: #999da3;
+    opacity:.9;
 }
 
 .ital {
