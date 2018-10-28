@@ -30,7 +30,8 @@ function addIncident(loc, category, description, date, time, uid) {
     },
     date: date,
     time: time,
-    user: uid // needs to get stuff from Firebase auth
+    user: uid, // needs to get stuff from Firebase auth
+    upvotes: 0
   }};
   root.child("hazards").update(addition);
   root.child("users").child(uid/* Firebase auth */).child("incidents").update(addition);
