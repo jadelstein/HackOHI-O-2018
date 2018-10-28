@@ -19,10 +19,14 @@ function initMap() {
     	document.getElementById("report-form").setAttribute("class", "enabled");
 
     	// Add new marker to database on submit
-    	var element = document.getElementById("submit");
-    	element.addEventListener("click", function() {
+    	var submit = document.getElementById("submit");
+    	submit.addEventListener("click", function() {
     		var description = document.getElementById("descrip").value;
     		var date = document.getElementById("date").value;
+            if (date == "") {
+                date = new Date();
+                date.setHours(0,0,0,0);
+            }
     		var time = document.getElementById("time").value;
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
@@ -46,6 +50,5 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
-
 
 
