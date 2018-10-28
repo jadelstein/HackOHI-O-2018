@@ -81,3 +81,8 @@ input, select {
 #myDiv {
   display: none;
 }
+
+#logo {
+    margin-right: 3px;
+    height: 100%;
+}

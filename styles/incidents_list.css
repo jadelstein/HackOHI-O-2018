@@ -1,3 +1,8 @@
 table {
 	border: 10px solid black;
 }
+
+#logo {
+    margin-right: 3px;
+    height: 100%;
+}

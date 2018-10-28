@@ -53,3 +53,8 @@ body {
 .other {
     color: orange;
 }
+
+#logo {
+    margin-right: 3px;
+    height: 100%;
+}
