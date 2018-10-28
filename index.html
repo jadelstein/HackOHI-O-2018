@@ -47,22 +47,17 @@
   		<h1 class="center">About:</h1>
  		<p class="center">This is text explaining the point of what we are doing and why it might be useful</p>
  	</div>
- 	<div class="row">
- 		<div class="button1">
- 			<button type="button" id="gauth" class="centerButton btn btn-primary btn-lg">Sign in with Google</button>
-			<button type="button" class="centerButton btn btn-primary btn-lg">Continue as a guest</button>
+ 	<div class="row">  
+ 		<div class="button1" id="unauthed">
+      <button type="button" id="gauth" class="centerButton btn btn-primary btn-lg">Sign in with Google</button>
+      <button type="button" class="centerButton btn btn-primary btn-lg">Continue as a guest</button>
 		</div>
+    <div class="button1" id="authed" hidden>
+      <button type=button" id="logout" class="centerButton btn btn-primary btn-lg">Sign out</button>
+    </div>
  	</div>
 </div>
+
 <script src="../scripts/signin.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
