@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Current Incidents</title>
+  <title>Incidents List</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/current_incidents.css">
-	<link rel="stylesheet" href="styles/map.css">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/incidents_list.css">
+
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
@@ -17,6 +17,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
   <script src="scripts/db.js"></script>
+	
 </head>
 <body>
 <!-- navigation bar/ page header -->
@@ -28,29 +29,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-        <a class="navbar-brand" href="#"><span><img src="images/runner.png" width="30" height="30" class="d-inline-block align-top"></span>
+          <a class="navbar-brand" href="#"><span><img src="images/runner.png" width="30" height="30" class="d-inline-block align-top"></span>
       Trailz</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="current_incidents.html">Current Incidents</a></li>
+        <li><a href="current_incidents.html">Current Incidents</a></li>
         <li><a href="report_incident.html">Report an Incident</a></li>
-        <li><a href="incidents_list.html">Incidents List</a></li>
+        <li class="active"><a href="incidents_list.html">Incidents List</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- incidents content -->
-<div id="googleMap""></div>
-<div id="legend">
-  <h3>LEGEND</h3>
-    <h4 class="safety">Safety</h4>
-    <br/>
-    <h4 class="trail-closure">Trail Closure</h4>
+<!-- Create Table of incidents -->
+<div class="container">
+  <h2 class="bold ital">Incidents</h2>
+  <p>The following incidents have been reported:</p>            
+  <table id="incidents-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody id="incidents-table-body">
+    </tbody>
+  </table>
 </div>
-<!-- Show map current location -->
-<script src="scripts/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=myMap"></script>
+<script src="scripts/incidents_list.js"></script>
 </body>
