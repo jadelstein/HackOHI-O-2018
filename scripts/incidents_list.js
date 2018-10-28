@@ -16,7 +16,7 @@ function populateTable(tableBody) {
       var voteBtn = document.createElement('BUTTON');
 
       voteBtn.appendChild(up);
-      var evntid = snapshot.val
+      var evntid = snapshot.val().id;
       voteBtn.setAttribute("id",evntid);
       voteBtn.setAttribute("name","upvote")
 
@@ -54,8 +54,8 @@ var tableBody = document.getElementById("incidents-table-body");
 populateTable(tableBody);
 
 var voteBtns = document.getElementsByName("upvote");
-voteBtns.forEach(function(elem){
-   elem.addEventListener("click", function() {
-        console.log("upvoted");
-    });
+document.addEventListener('click', function(e){
+  if(e.target.tagName=="BUTTON"){
+   addVote(e.target.id);
+  }
 });
