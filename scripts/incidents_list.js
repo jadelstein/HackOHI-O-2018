@@ -16,9 +16,10 @@ function populateTable(tableBody) {
       var voteBtn = document.createElement('BUTTON');
 
       voteBtn.appendChild(up);
-      var evntid = snapshot.val().id;
+      var evntid = snapshot.key;
       voteBtn.setAttribute("id",evntid);
-      voteBtn.setAttribute("name","upvote")
+      voteBtn.setAttribute("value",snapshot.val().upvotes);
+      voteBtn.setAttribute("name","upvote");
 
   		
   		// Create table detail for each attribute
@@ -56,6 +57,10 @@ populateTable(tableBody);
 var voteBtns = document.getElementsByName("upvote");
 document.addEventListener('click', function(e){
   if(e.target.tagName=="BUTTON"){
-   addVote(e.target.id);
+   addVote(e.target.id,e.target.value);
   }
 });
+
+function addVote(id,val){
+  firebase.database().ref('hazards/'+id).update({upvotes: Number(val)+Number(1),});
+}
