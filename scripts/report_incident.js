@@ -22,12 +22,43 @@ function initMap() {
     	var submit = document.getElementById("submit");
     	submit.addEventListener("click", function() {
     		var description = document.getElementById("descrip").value;
+            // Handle missing date
     		var date = document.getElementById("date").value;
-            /*if (date == "") {
-                date = new Date();
-                date.setHours(0,0,0,0);
-            }*/
+            if (date == "") {
+                var d = new Date();
+                var year = d.getFullYear();
+                var month = d.getMonth();
+                var monthString = month.toString();
+                if (month < 10) {
+                    monthString = "0" + month.toString();
+                }
+                var day = d.getDay();
+                var dayString = day.toString();
+                if (day < 10) {
+                    dayString = "0" + day.toString();
+                }
+                
+                date = year.toString() + "-" + monthString + "-" + dayString;
+            }
+            
+            // Handle missing time
     		var time = document.getElementById("time").value;
+            if (time == "") {
+                var d = new Date();
+                var hours = d.getHours();
+                var hoursString = hours.toString();
+                if (hours < 10) {
+                    hoursString = "0" + hours.toString();
+                }
+                var minutes = d.getMinutes();
+                var minutesString = minutes.toString();
+                if (minutes < 10) {
+                    minutesString = "0" + minutes.toString();
+                }
+
+                time = hoursString + ":" + minutesString;
+            }
+
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
