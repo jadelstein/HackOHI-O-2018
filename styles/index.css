@@ -29,3 +29,10 @@ body {
     width:100%;
 }
 
+.ital {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
