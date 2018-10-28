@@ -27,8 +27,8 @@ function initMap() {
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
-            //grabs the user id ...literally no idea why but it does
-            var uid = firebase.auth().O;
+            //grabs the user id i think this is a better way of doing this lol
+            var uid = firebase.auth().currentUser.displayName;
             //incase somone reprts when they are not logged in we want to have something
             if(uid == null){
                 uid = "-1"
