@@ -1,0 +1,23 @@
+#prompt-location {
+	font-weight: bold;
+}
+.hidden {
+	color: white;
+}
+.enabled {
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16pt;
+	background-color: #f8f8f8;
+}
+.description {
+	width: 50%;
+    height: 100px;
+    box-sizing: border-box;
+    resize: none;
+}
+input {
+	font-weight: normal;
+	font-size: 14pt;
+}
