@@ -35,8 +35,8 @@ function myMap() {
 }
 
 function loadIncidents(map) {
-  var elts = db.ref("hazards");
-  elts.orderByKey().on("child_added", function(snapshot) {
+  var hazards = db.ref("hazards");
+  hazards.orderByKey().on("child_added", function(snapshot) {
     var newMarker = new google.maps.Marker();
 	newMarker.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
 	// Set color based on category
