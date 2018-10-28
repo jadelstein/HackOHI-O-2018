@@ -56,19 +56,36 @@
 <script src="scripts/map.js"></script>
 <script src="scripts/report_incident.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=initMap"></script>
-<form id="report-form" class="hidden">
-  Date: <input id="date" type="date" name="date"/>
-  <br/>
-  Time: <input id="time" type="time" name="time"/>
-  <br/>
-  Description: <input id="descrip" class="description" type="text" name="description"/>
-  <br/>
-  Category: 
-  <select id="category">
-    <option value="safety">Safety</option>
-    <option value="trail-closure">Trail Closure</option>
-  </select>
-  <br/>
-  <input id="submit" type="submit" value="Submit"/>
-</form>
+<div class="form-box">
+  <form id="report-form" class="hidden">
+    <div class="form-group row">
+      <label for="date" class="col-sm-2 col-form-label">Date:</label>
+      <div class="col-sm-4">
+        <input id="date" type="date" name="date"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="time" class="col-sm-2 col-form-label">Time:</label>
+      <div class="col-sm-4">   
+        <input id="time" type="time" name="time"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="descrip" class="col-sm-2 col-form-label">Description:</label>
+      <div class="col-sm-4">
+        <input id="descrip" class="description" type="text" name="description"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="category" class="col-sm-2 col-form-label">Category:</label>
+      <div class="col-sm-4">
+        <select id="category">
+          <option value="safety">Safety</option>
+          <option value="trail-closure">Trail Closure</option>
+        </select>
+      </div>
+    </div>
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 </body>
