@@ -3,12 +3,13 @@ function initMap() {
 	var map = myMap();
 
 	// Wait for click
+	var incidentMarker = new google.maps.Marker();
 	google.maps.event.addListener(map, "click", function (event) {
     	var latitude = event.latLng.lat();
     	var longitude = event.latLng.lng();
     	
     	// Add marker at location
-    	var incidentMarker = new google.maps.Marker();
+    	incidentMarker.setMap(null);
     	incidentMarker.setPosition(new google.maps.LatLng(latitude, longitude));
     	incidentMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
     	incidentMarker.setMap(map);

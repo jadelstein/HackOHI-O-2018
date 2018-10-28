@@ -1,5 +1,7 @@
 #prompt-location {
 	font-weight: bold;
+	margin: auto;
+	text-align: center;
 }
 .hidden {
 	color: white;
