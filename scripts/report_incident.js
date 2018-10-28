@@ -23,10 +23,10 @@ function initMap() {
     	submit.addEventListener("click", function() {
     		var description = document.getElementById("descrip").value;
     		var date = document.getElementById("date").value;
-            if (date == "") {
+            /*if (date == "") {
                 date = new Date();
                 date.setHours(0,0,0,0);
-            }
+            }*/
     		var time = document.getElementById("time").value;
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
@@ -35,7 +35,7 @@ function initMap() {
             var uname = firebase.auth().currentUser.displayName;
             //incase somone reprts when they are not logged in we want to have something
             if(uname == null){
-                uname = "-1"
+                uname = "guest"
             }
     		addIncident(location, category, description, date, time, uname);
     	});
