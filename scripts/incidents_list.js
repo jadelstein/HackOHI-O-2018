@@ -10,12 +10,14 @@ function populateTable(tableBody) {
   		var time = document.createTextNode(snapshot.val().time);
   		var descrip = document.createTextNode(snapshot.val().description);
   		var categ = document.createTextNode(snapshot.val().category);
+      var user = document.createTextNode(snapshot.val().user)
   		
   		// Create table detail for each attribute
   		var dateRow = document.createElement("TD");
   		var timeRow = document.createElement("TD");
   		var descripRow = document.createElement("TD");
   		var categRow = document.createElement("TD");
+      var userRow =document.createElement("TD");
 
   		// Link everything together
   		tableBody.appendChild(row);
@@ -23,10 +25,12 @@ function populateTable(tableBody) {
   		row.appendChild(timeRow);
   		row.appendChild(descripRow);
   		row.appendChild(categRow);
+      row.appendChild(userRow);
   		dateRow.appendChild(date);
   		timeRow.appendChild(time);
   		descripRow.appendChild(descrip);
   		categRow.appendChild(categ);
+      userRow.appendChild(user);
 	});
 }
 
