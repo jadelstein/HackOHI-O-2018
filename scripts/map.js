@@ -40,6 +40,16 @@ function loadIncidents(map) {
     var newMarker = new google.maps.Marker();
 	newMarker.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
 	newMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
+	newMarker.setClickable(true);
+	google.maps.event.addListener(newMarker, "click", function() {
+			var label = {text:snapshot.val().description, fontSize: "0pt"};
+			newMarker.setLabel(label);
+			var infoWindow = new google.maps.InfoWindow();
+			infoWindow.setContent(snapshot.val().description);
+			infoWindow.setPosition(new google.maps.LatLng(snapshot.val().loc.lat, snapshot.val().loc.lon));
+			infoWindow.open(map, newMarker);
+
+	});
 	newMarker.setMap(map);
   });
 }
