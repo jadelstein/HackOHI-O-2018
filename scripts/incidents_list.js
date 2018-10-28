@@ -11,7 +11,7 @@ function populateTable(tableBody) {
   		var descrip = document.createTextNode(snapshot.val().description);
   		var categ = document.createTextNode(snapshot.val().category);
       var user = document.createTextNode(snapshot.val().user);
-  		
+
   		// Create table detail for each attribute
   		var dateRow = document.createElement("TD");
   		var timeRow = document.createElement("TD");
