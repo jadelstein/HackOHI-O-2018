@@ -31,8 +31,16 @@ function myMap() {
 
 	// Load all incidents thus far
 	// TODO
-	
+	var incidents = getIncidents();
+	console.log("A" + incidents);
+	for (var i in incidents) {
+		var newMarker = new google.maps.Marker();
+		newMarker.setPosition(new google.maps.LatLng(i.loc.lat, i.loc.lon));
+		newMarker.setMap(map);
+		console.log("HI");
+	}
 
 
 	return map;
 }
+
