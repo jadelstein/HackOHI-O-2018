@@ -21,6 +21,7 @@ root.child('hazards').on('value', function(dbsnap) { hazards = dbsnap.val() });
 function addIncident(loc, category, description, date, time, uid) {
   var timestamp = Date.now();
   var addition = { [timestamp]: {
+    id: loc.lat.toString() + loc.lon.toString() + time.toString(),
     category: category,
     description: description,
     loc: {
