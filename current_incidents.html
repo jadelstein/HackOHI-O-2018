@@ -18,7 +18,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
   <script src="scripts/db.js"></script>
 </head>
-<body>
+<body onload="loader()">
 <!-- navigation bar/ page header -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -41,16 +41,20 @@
     </div>
   </div>
 </nav>
-
+<!-- loading functionality-->
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <!-- incidents content -->
 <div id="googleMap""></div>
 <div id="legend">
   <h3>LEGEND</h3>
-    <h4 class="safety">Safety</h4>
+    <h4 class="safety">Safety Issue</h4>
     <br/>
     <h4 class="trail-closure">Trail Closure</h4>
 </div>
+</div>
 <!-- Show map current location -->
 <script src="scripts/map.js"></script>
+<script src="scripts/current_incidents.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=myMap"></script>
 </body>
