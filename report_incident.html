@@ -36,10 +36,21 @@
     </div>
   </div>
 </nav>
+<!-- prompt user to select a location to report -->
+<p id="prompt-location">Select a location on the map to report an incident at:</p>
 <!-- load map so user can select location of incident -->
 <div id="googleMap""></div>
 <!-- form to report an incident -->
+<script src="scripts/map.js"></script>
 <script src="scripts/report_incident.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=myMap"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=initMap"></script>
+<form id="report-form" class="hidden">
+  Date: <input type="date" name="date"/>
+  <br/>
+  Time: <input type="time" name="time"/>
+  <br/>
+  Description: <input class="description" type="text" name="description"/>
+  <br/>
+  <input type="submit" value="Submit"/>
+</form>
 </body>

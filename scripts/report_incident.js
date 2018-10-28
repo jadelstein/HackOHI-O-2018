@@ -1,39 +1,25 @@
+function initMap() {
+	// Display map and get reference to map
+	var map = myMap();
 
-// Initializes map to current location and returns reference to the map
-// Creates new incident from click location on map and user entered info on form
-function myMap() {
-	// Array of markers
-	var markersInMap = [];
-
-	var mapProp= {
-		// Default location for map is England is no location found
-    	center:new google.maps.LatLng(51.508742,-0.120850),
-    	zoom:15,
-	};
-
-	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-	var marker = new google.maps.Marker();
-	// Set location on map to current location
-	navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            // Set map and marker
-            map.setCenter(pos);
-            marker.setPosition(map.getCenter());
-    })
-
-	// To add the marker to the map, call setMap();
-	marker.setMap(map);
-
-	//Add listener for click
-	var newIncidentLoc = google.maps.event.addListener(map, "click", function (event) {
+	// Wait for click
+	google.maps.event.addListener(map, "click", function (event) {
     	var latitude = event.latLng.lat();
     	var longitude = event.latLng.lng();
-    	return new google.maps.LatLng({lat: latitude, lng: longitude});
-	});
+    	
+    	// Add marker at location
+    	var incidentMarker = new google.maps.Marker();
+    	incidentMarker.setPosition(new google.maps.LatLng(latitude, longitude));
+    	incidentMarker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+    	incidentMarker.setMap(map);
+    	
+    	// On click, remove prompt and display form
+    	document.getElementById("prompt-location").remove();
+    	document.getElementById("report-form").setAttribute("class", "enabled");
 
+    	// Add new marker to database
+    });
 }
+	
+
 
