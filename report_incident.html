@@ -8,10 +8,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles/report_incident.css">
   <link rel="stylesheet" href="styles/map.css">
+  <link rel="stylesheet" href="styles/index.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script src="scripts/db.js"></script>
 	
 </head>
 <body>
@@ -45,12 +50,18 @@
 <script src="scripts/report_incident.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cg3lzZuX6bLBGbagDGp7cc03pWR2GqE&callback=initMap"></script>
 <form id="report-form" class="hidden">
-  Date: <input type="date" name="date"/>
+  Date: <input id="date" type="date" name="date"/>
   <br/>
-  Time: <input type="time" name="time"/>
+  Time: <input id="time" type="time" name="time"/>
   <br/>
-  Description: <input class="description" type="text" name="description"/>
+  Description: <input id="descrip" class="description" type="text" name="description"/>
   <br/>
-  <input type="submit" value="Submit"/>
+  Category: 
+  <select id="category">
+    <option value="safety">Safety</option>
+    <option value="trail-closure">Trail Closure</option>
+  </select>
+  <br/>
+  <input id="submit" type="submit" value="Submit"/>
 </form>
 </body>
