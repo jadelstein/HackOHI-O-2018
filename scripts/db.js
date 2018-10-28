@@ -17,3 +17,18 @@ var root = db.ref();
 var users, hazards;
 root.child('users').on('value', function(dbsnap) { users = dbsnap.val() });
 root.child('hazards').on('value', function(dbsnap) { hazards = dbsnap.val() });
+
+function addIncident(loc, category, description) {
+  var timestamp = Date.now();
+  var addition = { [timestamp]: {
+    category: category,
+    description: description,
+    loc: {
+      lat: loc.lat,
+      lon: loc.lon
+    },
+    user: 11 // needs to get stuff from Firebase auth
+  }};
+  root.child("hazards").update(addition);
+  root.child("users").child(11/* Firebase auth */).child("incidents").update( { [timestamp]: "" } );
+}

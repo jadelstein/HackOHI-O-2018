@@ -1,10 +1,10 @@
 
-// Initializes map to current location
+// Initializes map to current location and returns reference to the map
 function myMap() {
 	var mapProp= {
-		// Default location for map is England is no location found
-    	center:new google.maps.LatLng(51.508742,-0.120850),
-    	zoom:15,
+		// Default location for map is Google HQ if no location found
+    	center:new google.maps.LatLng(37.419857, -122.078827),
+    	zoom:16,
 	};
 
 	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -23,4 +23,10 @@ function myMap() {
 
 	// To add the marker to the map, call setMap();
 	marker.setMap(map);
+
+	// Load all incidents thus far
+	// TODO
+
+
+	return map;
 }
