@@ -21,7 +21,7 @@ function initMap() {
     	// Add new marker to database
     	var element = document.getElementById("submit");
     	element.addEventListener("click", function() {
-    		var description = document.getElementById("descrip");
+    		var description = document.getElementById("descrip").value;
     		var location = {lat: latitude, lon: longitude};
     		var ddl = document.getElementById("category");
     		var category = ddl.options[ddl.selectedIndex].value;
