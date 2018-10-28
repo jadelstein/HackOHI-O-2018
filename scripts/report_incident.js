@@ -33,7 +33,7 @@ function initMap() {
             if(uid === undefined){
                 uid = "guest"
             }
-    		addIncident(location, category, description, date, time);
+    		addIncident(location, category, description, date, time, uid);
     	});
     });
 }
